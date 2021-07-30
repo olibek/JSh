@@ -7,5 +7,5 @@ for (let i = 0; i < numb.length; ++i) {
   summ *= numb[i];
 }
 console.log(summ);
-summ = summ ** 3;
+summ **= 3;
 console.log(String(summ).slice(0, 2));
