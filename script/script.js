@@ -1,22 +1,33 @@
-"use strict";
-let num = 266219;
+'use strict';
 
-num = String(num);
-num = num.split('');
-let numb = num.map(Number);
+let lang = prompt('Введите язык');
+let ruDay = ['Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье'];
+let enDay = ['Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday'];
+if (lang === 'ru') {
+  console.log(ruDay);
+}
+else if (lang === 'en') {
+  console.log(enDay);
+}
 
-// for (let i = 0; i < numb.length; ++i) {
-//   summ *= numb[i];
-// }
+switch (lang) {
+  case 'en':
+    console.log(enDay);
+    break;
+  case 'ru':
+    console.log(ruDay);
+    break;
+}
 
-// console.log(summ);
-// summ **= 3;
-// console.log(String(summ).slice(0, 2));
+let day = {
+  ru: ['Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье'],
+  en: ['Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday']
+};
 
-let sum = numb.reduce((prev, item, index) => {
-  return prev * item;
-});
-console.log(sum);
+console.log(day[lang]);
 
-sum **= 3;
-console.log(String(sum).slice(0, 2));
+let namePerson = prompt('Ввидите имя');
+let result = namePerson === 'Артем' ? 'Директор' :
+  namePerson === 'Максим' ? 'Преподаватель' :
+    'Студент';
+console.log('Привет ' + result);
