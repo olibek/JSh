@@ -6,11 +6,9 @@ const fooString = function () {
   }
   else {
     mess = mess.trim();
-    console.log(mess, mess.length);
     if (mess.length > 30) {
       mess = mess.substr(0, 30) + '...';
     }
   }
-  console.log(mess);
 };
 fooString();
