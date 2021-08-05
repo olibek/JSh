@@ -1,14 +1,19 @@
 'use strict';
-const fooString = function () {
-  let mess = prompt('Ввидети аргумент!');
-  if (typeof mess !== 'string') {
-    alert('Введите строку');
+let arr = ['232', '27', '4755', '104', '47', '78', '377']; // в виде строк
+
+arr.forEach((item) => {
+  if (item.startsWith('2') || item.startsWith('4')) {
+    console.log(item);
   }
-  else {
-    mess = mess.trim();
-    if (mess.length > 30) {
-      mess = mess.substr(0, 30) + '...';
-    }
+});
+
+let n;
+n = prompt('Введите число');
+number:
+for (let i = 2; i <= n; i++) {
+
+  for (let j = 2; j < i; j++) {
+    if (i % j === 0) continue number;
   }
-};
-fooString();
+  console.log(i + ' Делители этого числа: 1 и ' + i);
+}
