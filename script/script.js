@@ -1,19 +1,23 @@
 'use strict';
-let arr = ['232', '27', '4755', '104', '47', '78', '377']; // в виде строк
+let date = new Date();
+let day = date.getDay();
+const week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-arr.forEach((item) => {
-  if (item.startsWith('2') || item.startsWith('4')) {
-    console.log(item);
+let test = document.getElementById("test");
+console.log(week.join(", "));
+
+
+for (let i = 0; i < week.length; i++) {
+  if (i === day) {
+    test.innerHTML = `Сегодня: ${week[i].bold()}`;
+    console.log('Сегодня: ' + week[i].bold());
   }
-});
-
-let n;
-n = prompt('Введите число');
-number:
-for (let i = 2; i <= n; i++) {
-
-  for (let j = 2; j < i; j++) {
-    if (i % j === 0) continue number;
+  if (i === 0) {
+    console.log(week[i].italics());
+  } else if (i === 6) {
+    console.log(week[i].italics());
+  } else {
+    console.log(week[i]);
   }
-  console.log(i + ' Делители этого числа: 1 и ' + i);
 }
+
